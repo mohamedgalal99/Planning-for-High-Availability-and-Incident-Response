@@ -1369,10 +1369,11 @@ prometheusOperator:
     patch:
       enabled: true
       image:
-        #registry: quay.io
-        repository: quay.io/jetstack/cert-manager-webhook
-        #tag: v1.13.1
-        #sha: ""
+        registry: quay.io
+        repository: maartje/jettech-kube-webhook-certgen
+        tag: v1.5.0
+        #tag: v1.5.2
+        sha: ""
         pullPolicy: IfNotPresent
       resources: {}
       ## Provide a priority class name to the webhook patching job
@@ -1580,7 +1581,7 @@ prometheusOperator:
   image:
     registry: quay.io
     repository: prometheus-operator/prometheus-operator
-    tag: v0.69.1
+    tag: v0.69.0
     sha: ""
     pullPolicy: IfNotPresent
 
@@ -1597,7 +1598,7 @@ prometheusOperator:
   prometheusConfigReloaderImage:
     registry: quay.io
     repository: prometheus-operator/prometheus-config-reloader
-    tag: ""
+    tag: v0.49.0
     sha: ""
 
   ## Set the prometheus config reloader side-car CPU limit
@@ -1611,9 +1612,8 @@ prometheusOperator:
   ## Thanos side-car image when configured
   ##
   thanosImage:
-    registry: quay.io
-    repository: thanos/thanos
-    tag: v0.32.5
+    repository: quay.io/thanos/thanos
+    tag: v0.17.2
     sha: ""
 
   ## Set a Field Selector to filter watched secrets
@@ -1967,7 +1967,8 @@ prometheus:
     image:
       registry: quay.io
       repository: prometheus/prometheus
-      tag: v2.47.1
+      tag: v2.37.9
+      #tag: v2.28.1
       sha: ""
 
     ## Tolerations for use with node taints
