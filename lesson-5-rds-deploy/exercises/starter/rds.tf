@@ -10,4 +10,8 @@ module "project_rds_s" {
 
   private_subnet_ids = module.vpc_west.private_subnet_ids
   vpc_id = module.vpc_west.vpc_id
+  providers = {
+    aws = aws.usw1
+  }
+
 }
