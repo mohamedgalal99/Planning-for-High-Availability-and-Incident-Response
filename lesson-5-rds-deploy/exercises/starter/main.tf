@@ -38,8 +38,9 @@ locals {
      "kubernetes.io/role/elb" = 1
    }
    providers = {
-     aws  = aws.usw1
+     aws = aws.usw1
    }
+  }
 
 output "vpc_id" {
    value = module.vpc_west.vpc_id
