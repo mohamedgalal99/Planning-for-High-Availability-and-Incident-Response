@@ -1368,8 +1368,9 @@ prometheusOperator:
     patch:
       enabled: true
       image:
-        repository: jettech/kube-webhook-certgen
-        tag: v1.5.2
+        registry: quay.io
+        repository: maartje/jettech-kube-webhook-certgen
+        tag: v1.5.0
         sha: ""
         pullPolicy: IfNotPresent
       resources: {}
