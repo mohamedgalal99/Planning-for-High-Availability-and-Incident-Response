@@ -396,7 +396,8 @@ alertmanager:
     ## Image of Alertmanager
     ##
     image:
-      repository: quay.io/prometheus/alertmanager
+      registry: quay.io
+      repository: prometheus/alertmanager
       tag: v0.26.0
       sha: ""
 
@@ -1577,8 +1578,9 @@ prometheusOperator:
   ## Prometheus-operator image
   ##
   image:
-    repository: quay.io/prometheus-operator/prometheus-operator
-    tag: v0.49.0
+    registry: quay.io
+    repository: prometheus-operator/prometheus-operator
+    tag: v0.69.1
     sha: ""
     pullPolicy: IfNotPresent
 
@@ -1961,7 +1963,8 @@ prometheus:
     ## Image of Prometheus.
     ##
     image:
-      repository: quay.io/prometheus/prometheus
+      registry: quay.io
+      repository: prometheus/prometheus
       tag: v2.28.1
       sha: ""
 
