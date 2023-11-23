@@ -1,8 +1,6 @@
-# API Service
-
-| Category     | SLI | SLO                                                                                                         |
-|--------------|-----|-------------------------------------------------------------------------------------------------------------|
-| Availability |     | 99%                                                                                                         |
-| Latency      |     | 90% of requests below 100ms                                                                                 |
-| Error Budget |     | Error budget is defined at 20%. This means that 20% of the requests can fail and still be within the budget |
-| Throughput   |     | 5 RPS indicates the application is functioning                                                              |
+| Category     | SLI                                                                                                                                        | SLO                                                                                                         |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| Availability | sum(rate(flask_http_request_total{job="ec2", status!="5.."}[1d])) / sum(rate(flask_http_request_total{job="ec2"}[1d]))                     | 99%                                                                                                         |
+| Latency      | histogram_quantile(0.90, sum by(le,instance) (rate(flask_http_request_duration_seconds_bucket[7d])))                                       | 90% of requests below 100ms                                                                                 |
+| Error Budget | 1- ((1 - (sum(rate(flask_http_request_total{job="ec2", status=~"2.."}[1d])) / sum(rate(flask_http_request_total{job="ec2"}[1d])))) / 0.20) | Error budget is defined at 20%. This means that 20% of the requests can fail and still be within the budget |
+| Throughput   | sum(rate(flask_http_request_total{status=~"2.."}[5m]))                                                                                     | 5 RPS indicates the application is functioning                                                              |
