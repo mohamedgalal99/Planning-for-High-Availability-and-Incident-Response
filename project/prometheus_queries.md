@@ -14,4 +14,4 @@ sum(rate(flask_http_request_total{status=~"2.."}[5m]))
 ### The error budget is 20%
 1- ((1 - (sum(rate(flask_http_request_total{job="ec2", status=~"2.."}[1d])) / sum(rate(flask_http_request_total{job="ec2"}[1d])))) / 0.20)
 
-![Alt text](image.png)
+![z](image.png)
