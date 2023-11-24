@@ -5,8 +5,8 @@ I will use us-east-2 region, with AZs
 - us-east-2a
 - us-east-2b
 For DB will use other region us-west-1
-- us-west-2a
-- us-west-2b
+- us-west-1c
+- us-west-1d
 
 ```
 aws ec2 describe-availability-zones --region us-east-2
